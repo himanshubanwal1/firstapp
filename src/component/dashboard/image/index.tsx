@@ -5,7 +5,7 @@ const Image=()=>{
     return(
         <View>
             <Text>
-                IMAGE
+                IMAGE Himanshu
             </Text>
         </View>
     )
