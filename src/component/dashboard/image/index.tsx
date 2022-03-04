@@ -5,7 +5,11 @@ const Image = () => {
     return (
         <View>
             <Text>
+<<<<<<< HEAD
                 IMAGE --- Aditya changed......
+=======
+                IMAGE hai re 
+>>>>>>> master
             </Text>
         </View>
     )
