@@ -5,7 +5,7 @@ const Image = () => {
     return (
         <View>
             <Text>
-                IMAGE --- Aditya
+                IMAGE --- Aditya changed......
             </Text>
         </View>
     )
