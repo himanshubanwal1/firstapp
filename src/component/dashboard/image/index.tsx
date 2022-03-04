@@ -1,15 +1,15 @@
 import React from "react";
 import { Text, View } from 'react-native';
 
-const Image=()=>{
-    return(
+const Image = () => {
+    return (
         <View>
             <Text>
-                IMAGE
+                IMAGE- Aditya
             </Text>
         </View>
     )
-    
-    
+
+
 }
 export default Image;
