@@ -86,9 +86,9 @@ const signIn = async () => {
         
         <View style={Style.container}>
             <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "#6C63FF" translucent = {true}/>
-
          <View style={Style.header}>
-       <Text style={Style.text_header}>Welcome!</Text>
+       <Text style={Style.text_header}>Welcome! 🚀</Text>
+       
         </View>
          <View style={Style.footer}>
         <Text style={Style.text_footer}>Email</Text>
@@ -113,11 +113,14 @@ const signIn = async () => {
             </LinearGradient>
             
         </TouchableOpacity>
-      
-        <Pressable onPress={signIn}>
-                    <Text>Google</Text>
-                </Pressable> 
-            
+                <GoogleSigninButton
+  style={{ width: 192, height: 48 ,marginTop: 10}}
+  size={GoogleSigninButton.Size.Wide}
+  color={GoogleSigninButton.Color.Dark}
+  onPress={signIn}
+/> 
+
+<Image source={require('../../../asset/images/authlogo.png')} style={{width:200,height:200,marginTop:5}} />
                 
          </View>
          </View>   
@@ -130,7 +133,9 @@ const signIn = async () => {
 const Style=StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor:'lightblue',
+        backgroundColor: '#6C63FF',
+
+        
     },
     header:{
         flex: 2,
