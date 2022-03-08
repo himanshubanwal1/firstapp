@@ -105,7 +105,7 @@ const signIn = async () => {
        
             <LinearGradient colors={['#6C63FF','#34d5eb']} style={Style.signin}>
                 <Pressable >
-                <Text style={Style.textsign} >Sign In </Text>
+                <Text style={Style.textsign} >Sign In</Text>
                 </Pressable>
             
       
