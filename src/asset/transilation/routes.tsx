@@ -3,8 +3,11 @@ const routes={
         Name:'Root',
         onboarding:{
             Name:'Onboarding',
+            startScreen:{
+                Name:'StartScreen'
+            },
             login:{
-                Name:'Login'
+                Name:'login'
             }
         },
         dashboard:{
