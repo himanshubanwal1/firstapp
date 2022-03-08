@@ -1,29 +1,32 @@
-const routes={
-    root:{
-        Name:'Root',
-        onboarding:{
-            Name:'Onboarding',
-            login:{
-                Name:'Login'
-            }
+const routes = {
+    root: {
+        Name: 'Root',
+        onboarding: {
+            Name: 'Onboarding',
+            login: {
+                Name: 'Login'
+            },
+            imageDetail: {
+                Name: 'Image Detail'
+            },
         },
-        dashboard:{
-            Name:'Dashboard',
-            tabs:{
-                Name:'DashboardTabs',
-                image:{
-                    Name:'ImageTab'
+        dashboard: {
+            Name: 'Dashboard',
+            tabs: {
+                Name: 'DashboardTabs',
+                image: {
+                    Name: 'ImageTab'
                 },
-                post:{
-                    Name:"postTab"
+                post: {
+                    Name: "postTab"
                 },
-                settings:{
-                    Name:"settingTab"
+                settings: {
+                    Name: "settingTab"
                 },
-                user:{
-                    Name:"userTab"
+                user: {
+                    Name: "userTab"
                 }
-                
+
             }
         }
     }

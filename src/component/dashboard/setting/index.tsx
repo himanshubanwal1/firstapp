@@ -1,15 +1,15 @@
 import React from "react";
 import { Text, View } from 'react-native';
 
-const Settings=()=>{
-    return(
+const Settings = () => {
+    return (
         <View>
             <Text>
-               Post
+                Settings
             </Text>
         </View>
     )
-    
-    
+
+
 }
 export default Settings;
