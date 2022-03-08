@@ -25,7 +25,7 @@ const navigation = useNavigation();
         <View style={Style.button}>
         <TouchableOpacity>
             
-             <LinearGradient colors={['#6C63FF','#536DFE']} style={Style.signin}>
+             <LinearGradient colors={['#6C63FF','blue']} style={Style.signin}>
                  <Pressable onPress={() => navigation.navigate(routes.root.onboarding.login.Name)}>
                  <Text style={Style.textsign} >Get Started </Text>
                  </Pressable>

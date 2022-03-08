@@ -34,7 +34,7 @@ const User=()=>{
 }, []);
 
 async function signOut(){
-    // navigation.replace(routes.root.onboarding.login.Name);
+    navigation.replace(routes.root.onboarding.login.Name);
     await auth().signOut(); 
 }
     return(
