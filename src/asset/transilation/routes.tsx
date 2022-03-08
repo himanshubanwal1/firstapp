@@ -5,6 +5,9 @@ const routes={
             Name:'Onboarding',
             login:{
                 Name:'Login'
+            },
+            postDetail:{
+                Name:'postDetail'
             }
         },
         dashboard:{
