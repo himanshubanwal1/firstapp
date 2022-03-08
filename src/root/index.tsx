@@ -6,6 +6,7 @@ import Dashboard from "../component/dashboard";
 import Onboarding from "../component/onboarding";
 import { QueryClient, QueryClientProvider } from 'react-query';
 
+<<<<<<< HEAD
 import { 
   NavigationContainer, 
   DefaultTheme as NavigationDefaultTheme,
@@ -68,6 +69,25 @@ const Root=()=>{
       
       
         
+=======
+
+
+const Stack = createNativeStackNavigator();
+const queryClient = new QueryClient();
+
+const Root = () => {
+
+
+    return (
+        <QueryClientProvider client={queryClient}>
+            <NavigationContainer>
+                <Stack.Navigator initialRouteName={routes.root.onboarding.Name} screenOptions={{ headerShown: false }}>
+                    <Stack.Screen name={routes.root.onboarding.Name} component={Onboarding} />
+                    <Stack.Screen name={routes.root.dashboard.Name} component={Dashboard} />
+                </Stack.Navigator>
+            </NavigationContainer>
+        </QueryClientProvider>
+>>>>>>> b67657092d1700912d836a6049ef86d0dbddf7d2
 
     )
 }
