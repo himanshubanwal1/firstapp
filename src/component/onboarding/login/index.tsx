@@ -14,9 +14,9 @@ const Login = () => {
     useEffect(() => {
         createChannels();
         // to get the token of device
-        messaging().getToken().then(token => {
-            console.log('My token: ', token)
-        })
+        // messaging().getToken().then(token => {
+        //     console.log('My token: ', token)
+        // })
 
     }, [])
 
@@ -28,11 +28,14 @@ const Login = () => {
             PushNotification.localNotification({
                 channelId: "test-channel",
                 title: "Remote Notification from net solutions",
-                message: 'Heya This notification is from Net solutions, Technology Park, Chandigarh ❤😍',
+                message: 'Heya This notification is from Net solutions.',
             })
+
+
         });
         return unsubscribe;
     }, []);
+
 
     useEffect(() => {
         messaging().onNotificationOpenedApp(remoteMessage => {
@@ -41,10 +44,6 @@ const Login = () => {
             navigation.navigate(routes.root.dashboard.Name);
         })
     }, [])
-
-    // useEffect(() => {
-    //     PushNotification.localNotification
-    // }, [])
 
 
 

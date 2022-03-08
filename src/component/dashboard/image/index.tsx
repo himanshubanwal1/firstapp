@@ -15,7 +15,7 @@ import PushNotification from "react-native-push-notification";
 
 const ImageTab = ({ navigation }) => {
 
-    const { data, isLoading } = useQuery('images1', () => fetch(BASE_URL + IMAGES).then(response => response.json().catch(err => console.log('Not getting response'))),
+    const { data, isLoading } = useQuery('images', () => fetch(BASE_URL + IMAGES).then(response => response.json().catch(err => console.log('Not getting response'))),
         {
             onSettled: () => {
                 console.log('image api called settled')
@@ -86,10 +86,11 @@ const ImageTab = ({ navigation }) => {
 
         PushNotification.localNotificationSchedule({
             channelId: "test-channel",
-            title: "Alarm",
+            title: "Alarm - Schedule Notification",
             message: "You clicked on id:" + item.id + " 10 seconds ago",
             date: new Date(Date.now() + 10 * 1000),
             allowWhileIdle: true,
+            priority: "high",
         });
     }
 

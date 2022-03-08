@@ -13,9 +13,12 @@ PushNotification.configure({
     onNotification: function (notification) {
         console.log("NOTIFICATION:", notification);
     },
+
+    // Called when Token is generated
     onRegister: function (token) {
         console.log("TOKEN:", token);
     },
+
     requestPermissions: Platform.OS === 'android',
     // setBackgroundMessageHandler: true,
 })
@@ -23,5 +26,8 @@ PushNotification.configure({
 messaging().setBackgroundMessageHandler(async remoteMessage => {
     console.log('Message handled in the background!', remoteMessage);
 });
+
+
+
 
 AppRegistry.registerComponent(appName, () => Root);
