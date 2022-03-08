@@ -1,5 +1,5 @@
-import navigateFN from "./navigateFN";
+import common from "./common";
 
 export default {
-    navigateFN
+    common
   };

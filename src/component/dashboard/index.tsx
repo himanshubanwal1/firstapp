@@ -9,9 +9,10 @@ import User from "./user";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useTranslation } from 'react-i18next';
 const Tab = createBottomTabNavigator();
+import "../../asset/constant/IMLocalize"
 
 const Dashboard=()=>{
-  
+  const { t } = useTranslation();
     return(
         <Tab.Navigator 
         screenOptions={({ route }) => ({
@@ -37,10 +38,26 @@ const Dashboard=()=>{
           })} 
         >
         
-            <Tab.Screen name={routes.root.dashboard.tabs.image.Name} component={Image} />
-            <Tab.Screen name={routes.root.dashboard.tabs.post.Name} component={Post} />
-            <Tab.Screen name={routes.root.dashboard.tabs.settings.Name} component={Settings} />
-            <Tab.Screen name={routes.root.dashboard.tabs.user.Name} component={User} />
+            <Tab.Screen 
+            name={routes.root.dashboard.tabs.image.Name} 
+            component={Image}
+            options={{ tabBarLabel: t("common:imageTab") }}
+            />
+            <Tab.Screen 
+            name={routes.root.dashboard.tabs.post.Name} 
+            component={Post}
+            options={{ tabBarLabel: t("common:post") }}
+            />
+            <Tab.Screen 
+            name={routes.root.dashboard.tabs.settings.Name} 
+            component={Settings}
+            options={{ tabBarLabel: t("common:settings") }} 
+            />
+            <Tab.Screen 
+            name={routes.root.dashboard.tabs.user.Name} 
+            component={User} 
+            options={{ tabBarLabel: t("common:user") }}
+            />
         
         </Tab.Navigator>
     )

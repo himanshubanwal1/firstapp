@@ -1,5 +1,5 @@
-import navigateEN from "./navigateEN";
+import common from "./common";
 
 export default {
-    navigateEN
-  };
+  common
+};
