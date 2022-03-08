@@ -11,6 +11,7 @@ const LANGUAGES = [
     { code: 'fr', label: 'Français' }
   ];
 
+<<<<<<< HEAD
 const Settings=()=>{
     const{isDarkTheme,setisDarkTheme}=useContext(themecontext)
     const onPress=()=>{
@@ -27,6 +28,18 @@ const Settings=()=>{
            
         </View>
     ) 
+=======
+const Settings = () => {
+    return (
+        <View>
+            <Text>
+                Settings
+            </Text>
+        </View>
+    )
+
+
+>>>>>>> b67657092d1700912d836a6049ef86d0dbddf7d2
 }
 
 
