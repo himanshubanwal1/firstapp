@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Text, View } from 'react-native';
+import { useTheme } from '@react-navigation/native';
 import { BASE_URL, IMAGES } from '../../../services/endpoints';
 import { Pressable } from "react-native";
 import { useQuery } from "react-query";
@@ -9,7 +10,6 @@ import { ActivityIndicator } from "react-native";
 import { StyleSheet, FlatList, Image } from "react-native";
 import { TouchableOpacity } from "react-native";
 import routes from '../../../asset/transilation/routes';
-
 import PushNotification from "react-native-push-notification";
 
 
@@ -24,9 +24,6 @@ const ImageTab = ({ navigation }) => {
                 console.log('got response from image api.')
             }
         }
-    )
-
-
 
     const renderImage = ({ item, index }) => {
         // console.log(item)
@@ -42,7 +39,7 @@ const ImageTab = ({ navigation }) => {
                         source={{ uri: item.url }}
                         resizeMode='contain'
                     />
-                    <View styles={styles.wrapText}>
+                    <View style={styles.wrapText}>
                         <Text style={styles.fontSize}>{`${item.id}. ${item.title} `}</Text>
                     </View>
                     <View style={styles.buttonContainer}>

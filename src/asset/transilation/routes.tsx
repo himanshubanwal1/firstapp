@@ -1,3 +1,4 @@
+
 const routes = {
     root: {
         Name: 'Root',
@@ -7,7 +8,10 @@ const routes = {
                 Name: 'Login'
             },
             imageDetail: {
-                Name: 'Image Detail'
+                Name: 'ImageDetail'
+            },
+            postDetail:{
+                Name:'PostDetail'
             },
         },
         dashboard: {
@@ -18,17 +22,17 @@ const routes = {
                     Name: 'ImageTab'
                 },
                 post: {
-                    Name: "postTab"
+                    Name: "PostTab"
                 },
                 settings: {
-                    Name: "settingTab"
+                    Name: "SettingsTab"
                 },
                 user: {
-                    Name: "userTab"
+                    Name: "UserTab"
                 }
 
             }
         }
     }
-};
+}
 export default routes;
