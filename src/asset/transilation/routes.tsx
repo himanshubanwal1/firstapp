@@ -1,3 +1,4 @@
+
 const routes={
     root:{
         Name:'Root',
@@ -7,7 +8,7 @@ const routes={
                 Name:'Login'
             },
             postDetail:{
-                Name:'postDetail'
+                Name:'PostDetail'
             }
         },
         dashboard:{
@@ -18,13 +19,13 @@ const routes={
                     Name:'ImageTab'
                 },
                 post:{
-                    Name:"postTab"
+                    Name:"PostTab"
                 },
                 settings:{
-                    Name:"settingTab"
+                    Name:"SettingTab"
                 },
                 user:{
-                    Name:"userTab"
+                    Name:"UserTab"
                 }
                 
             }

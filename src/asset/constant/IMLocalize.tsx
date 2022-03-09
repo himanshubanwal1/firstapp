@@ -57,5 +57,3 @@ i18n
     },
     defaultNS: 'common'
   });
-  export default LANGUAGE_DETECTOR 
- 

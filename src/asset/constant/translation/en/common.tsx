@@ -4,5 +4,9 @@ export default {
     settings: 'Settings',
     user:'User',
     languageSelect:"languageSelect",
-    switchtoDarkTheme:"Switch To Dark Theme"
+    switchtoDarkTheme:"Switch To Dark Theme",
+    ImageTab:"ImageTab",
+    Dashboard:"Dashboard",
+    SettingTab:"Settings",
+    UserTab:"User"
   };

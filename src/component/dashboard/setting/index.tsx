@@ -3,10 +3,6 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { themecontext } from "../../../root";
 import { useTranslation } from 'react-i18next';
 import { useTheme  } from '@react-navigation/native';
-import Selector from "../../common/language/languageSelector";
-import { use } from "i18next";
-
-
 
 const Settings=()=>{
     const{isDarkTheme,setisDarkTheme}=useContext(themecontext)
@@ -37,7 +33,7 @@ const Settings=()=>{
                 return<Pressable 
                // disabled={selectLanguageCode}
                 onPress={()=>setLanguage(language.code)}>
-                    <Text style={selectedLanguage?Style.selectedText:Style.text}>
+                    <Text style={selectedLanguage?Style.text:Style.selectedText}>
                         {language.label}
                     </Text>
                 </Pressable>

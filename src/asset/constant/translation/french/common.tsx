@@ -4,5 +4,9 @@ export default {
     settings: 'réglage',
     user:'utilisateur',
     languageSelect:"langueSélectionnez",
-    switchtoDarkTheme:"passer au thème sombre"
+    switchtoDarkTheme:"passer au thème sombre",
+    ImageTab:"onglet image",
+    Dashboard:"Tableau de bord",
+    SettingTab:"Paramètres",
+    UserTab:"Utilisateur"
   };
