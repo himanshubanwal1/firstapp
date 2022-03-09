@@ -28,11 +28,11 @@ const Dashboard = () => {
                     }
                     return <Ionicons name={iconName} size={30} color={color} />
                 },
-                tabBarActiveTintColor: 'black',
-                tabBarInactiveTintColor: 'grey',
+                tabBarActiveTintColor: '#2a67f5',
+                tabBarInactiveTintColor: '#6C63FF',
                 tabBarLabelStyle: {
                     fontSize: 13,
-                    color: 'black'
+                    color: '#6C63FF'
                 },
             })
         }
@@ -40,7 +40,7 @@ const Dashboard = () => {
             <Tab.Screen name={routes.root.dashboard.tabs.post.Name} component={Post} options={{ title: 'Post' }} />
             <Tab.Screen name={routes.root.dashboard.tabs.image.Name} component={ImageTab} options={{ title: 'Image' }} />
             <Tab.Screen name={routes.root.dashboard.tabs.settings.Name} component={Settings} options={{ title: 'Settings' }} />
-            <Tab.Screen name={routes.root.dashboard.tabs.user.Name} component={User} options={{ title: 'User' }} />
+            <Tab.Screen name={routes.root.dashboard.tabs.user.Name} component={User} options={{ title: 'PROFILE' }} />
         </Tab.Navigator>
     )
 }
