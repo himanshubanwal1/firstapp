@@ -14,7 +14,6 @@ const queryClient = new QueryClient();
 
 const Root = () => {
 
-
     return (
         <QueryClientProvider client={queryClient}>
             <NavigationContainer>

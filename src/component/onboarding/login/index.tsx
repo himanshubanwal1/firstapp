@@ -17,33 +17,38 @@ const Login = () => {
         // messaging().getToken().then(token => {
         //     console.log('My token: ', token)
         // })
-
     }, [])
+
+
 
 
     useEffect(() => {
         const unsubscribe = messaging().onMessage(async remoteMessage => {
-            Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
-            console.log('A new FCM message arrived!', JSON.stringify(remoteMessage));
+            // console.log('A new FCM message arrived!', JSON.stringify(remoteMessage));
             PushNotification.localNotification({
                 channelId: "test-channel",
-                title: "Remote Notification from net solutions",
-                message: 'Heya This notification is from Net solutions.',
+                title: remoteMessage.notification.title,
+                message: remoteMessage.notification.body,
+                largeIconUrl: remoteMessage.notification.android.imageUrl,
+                bigPictureUrl: remoteMessage.notification.android.imageUrl,
             })
-
 
         });
         return unsubscribe;
     }, []);
 
 
+
+
     useEffect(() => {
         messaging().onNotificationOpenedApp(remoteMessage => {
-            console.log('Notification caused app to open from background state:',
-                remoteMessage.notification, );
+            // console.log('Notification caused app to open from background state:', remoteMessage.notification, );
             navigation.navigate(routes.root.dashboard.Name);
         })
     }, [])
+
+
+
 
 
 
@@ -56,9 +61,6 @@ const Login = () => {
             }
         )
     }
-
-
-
 
 
 
