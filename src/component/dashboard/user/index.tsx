@@ -1,3 +1,4 @@
+
 import { NavigateBefore, Navigation } from "@mui/icons-material";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import React, { useEffect, useState } from "react";
@@ -71,6 +72,7 @@ async function signOut(){
     
 }
 
+
 const Style = StyleSheet.create({
     container:{
         flex:2,
@@ -102,4 +104,6 @@ marginBottom:10,
        
     }
 })
-export default User;
+
+export default UserTab;
+

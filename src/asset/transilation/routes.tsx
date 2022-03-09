@@ -1,34 +1,42 @@
-const routes={
-    root:{
-        Name:'Root',
-        onboarding:{
-            Name:'Onboarding',
-            startScreen:{
+
+const routes = {
+    root: {
+        Name: 'Root',
+        onboarding: {
+            Name: 'Onboarding',
+            login: {
+                Name: 'Login'
+            },
+            imageDetail: {
+                Name: 'ImageDetail'
+            },
+            postDetail:{
+                Name:'PostDetail'
+            },
+           startScreen:{
                 Name:'StartScreen'
             },
-            login:{
-                Name:'login'
-            }
+
         },
-        dashboard:{
-            Name:'Dashboard',
-            tabs:{
-                Name:'DashboardTabs',
-                image:{
-                    Name:'ImageTab'
+        dashboard: {
+            Name: 'Dashboard',
+            tabs: {
+                Name: 'DashboardTabs',
+                image: {
+                    Name: 'ImageTab'
                 },
-                post:{
-                    Name:"postTab"
+                post: {
+                    Name: "PostTab"
                 },
-                settings:{
-                    Name:"settingTab"
+                settings: {
+                    Name: "SettingsTab"
                 },
-                user:{
-                    Name:"userTab"
+                user: {
+                    Name: "UserTab"
                 }
-                
+
             }
         }
     }
-};
+}
 export default routes;

@@ -1,11 +1,14 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect } from "react";
-import {View,Text,Image, StyleSheet, Pressable, TouchableOpacity, StatusBar, TextInput, Button} from "react-native";
+import PushNotification from "react-native-push-notification";
+import messaging from '@react-native-firebase/messaging';
+import {View,Text,Image, StyleSheet, Pressable, TouchableOpacity, StatusBar, TextInput, Button,Alert} from "react-native";
 import routes from "../../../asset/transilation/routes";
 import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome,{SolidIcons} from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import auth, { firebase } from '@react-native-firebase/auth';
+
 
 import {
     GoogleSignin,
@@ -53,35 +56,63 @@ const signIn = async () => {
 
 
  
-    // GoogleSignin.configure({
-    //     scopes: [], // [Android] what API you want to access on behalf of the user, default is email and profile
-    //     webClientId: '266561141597-289afanpufq8v3fm6na3mnb2qmaflsml.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
-    //     offlineAccess: true, // if you want to access Google API on behalf of the user FROM YOUR SERVER
-    //     // hostedDomain: '', // specifies a hosted domain restriction
-    //     // forceCodeForRefreshToken: true, // [Android] related to `serverAuthCode`, read the docs link below *.
-    //     // accountName: '', // [Android] specifies an account name on the device that should be used
-    //     // iosClientId: '<FROM DEVELOPER CONSOLE>', // [iOS] if you want to specify the client ID of type iOS (otherwise, it is taken from GoogleService-Info.plist)
-    //     // googleServicePlistPath: '', // [iOS] if you renamed your GoogleService-Info file, new name here, e.g. GoogleService-Info-Staging
-    //     // openIdRealm: '', // [iOS] The OpenID2 realm of the home web server. This allows Google to include the user's OpenID Identifier in the OpenID Connect ID token.
-    //     // profileImageSize: 120, // [iOS] The desired height (and width) of the profile image. Defaults to 120px
-    //   });
-    //   try {
-    //     await GoogleSignin.hasPlayServices();
-    //     const userInfo = await GoogleSignin.signIn();
-    //     alert(JSON.stringify(userInfo));
-    //   } catch (error) {
-    //       console.log(error);
-    //     if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-    //       // user cancelled the login flow
-    //     } else if (error.code === statusCodes.IN_PROGRESS) {
-    //       // operation (e.g. sign in) is in progress already
-    //     } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-    //       // play services not available or outdated
-    //     } else {
-    //       // some other error happened
-    //     }
-    //   }
+ 
 }
+
+
+    useEffect(() => {
+        createChannels();
+        // to get the token of device
+        // messaging().getToken().then(token => {
+        //     console.log('My token: ', token)
+        // })
+    }, [])
+
+
+
+
+    useEffect(() => {
+        const unsubscribe = messaging().onMessage(async remoteMessage => {
+            // console.log('A new FCM message arrived!', JSON.stringify(remoteMessage));
+            PushNotification.localNotification({
+                channelId: "test-channel",
+                title: remoteMessage.notification.title,
+                message: remoteMessage.notification.body,
+                largeIconUrl: remoteMessage.notification.android.imageUrl,
+                bigPictureUrl: remoteMessage.notification.android.imageUrl,
+            })
+
+        });
+        return unsubscribe;
+    }, []);
+
+
+
+
+    useEffect(() => {
+        messaging().onNotificationOpenedApp(remoteMessage => {
+            // console.log('Notification caused app to open from background state:', remoteMessage.notification, );
+            navigation.navigate(routes.root.dashboard.Name);
+        })
+    }, [])
+
+
+
+
+
+
+    // Push notification
+    const createChannels = () => {
+        PushNotification.createChannel(
+            {
+                channelId: "test-channel",
+                channelName: "Test Channel"
+            }
+        )
+    }
+
+
+
     return(
         
         <View style={Style.container}>
@@ -124,11 +155,9 @@ const signIn = async () => {
                 
          </View>
          </View>   
-        </View>
-    )
-    
-    
+
 }
+
 
 const Style=StyleSheet.create({
     container:{
@@ -199,7 +228,8 @@ const Style=StyleSheet.create({
     textsign:{
         color: 'white',
         fontWeight: 'bold'
+
     }
-  })
+})
 
 export default Login;
