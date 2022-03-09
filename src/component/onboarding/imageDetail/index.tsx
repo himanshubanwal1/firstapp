@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native';
-import { Pressable } from 'react-native';
+import { Pressable, Image } from 'react-native';
 import routes from '../../../asset/transilation/routes';
 
 
@@ -8,13 +8,15 @@ import routes from '../../../asset/transilation/routes';
 const ImageDetail = ({ route, navigation }) => {
 
     // console.log(route)
-    const { _id, title, thumbnail_Url, album_Id } = route.params;
+    const { _id, title, thumbnail_Url, album_Id, img_Url } = route.params;
     return (
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.headerText}>Image Details</Text>
             </View>
+
             <View style={styles.itemContainer}>
+                <Image source={{ uri: img_Url }} style={{ height: 100, width: 100, borderRadius:100 }} />
                 <Text style={styles.textStyle}> Id: {_id}</Text>
                 <Text style={styles.textStyle}> Title: {title}</Text>
                 <Text style={styles.textStyle}> Thumbnail Url: {thumbnail_Url}</Text>
@@ -49,7 +51,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     itemContainer: {
-        flex: 0.4,
+        flex: 1,
         backgroundColor: 'grey',
         justifyContent: 'center',
         alignItems: 'center',

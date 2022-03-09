@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { Text, View } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import { BASE_URL, IMAGES } from '../../../services/endpoints';
@@ -15,7 +15,7 @@ import PushNotification from "react-native-push-notification";
 
 const ImageTab = ({ navigation }) => {
 
-    const { data, isLoading } = useQuery('images1', () => fetch(BASE_URL + IMAGES).then(response => response.json().catch(err => console.log('Not getting response'))),
+    const { data, isLoading, refetch, isRefetching } = useQuery('images100', () => fetch(BASE_URL + IMAGES).then(response => response.json().catch(err => console.log('Not getting response'))),
         {
             onSettled: () => {
                 console.log('image api called settled')
@@ -25,9 +25,9 @@ const ImageTab = ({ navigation }) => {
             }
         }
 
-    )
     const renderImage = ({ item, index }) => {
         // console.log(item)
+        // console.log(index)
         return (
             <TouchableOpacity onPress={() => {
                 handleNotification(item, index)
@@ -48,7 +48,8 @@ const ImageTab = ({ navigation }) => {
                                 _id: item.id,
                                 title: item.title,
                                 thumbnail_Url: item.thumbnailUrl,
-                                album_Id: item.albumId
+                                album_Id: item.albumId,
+                                img_Url: item.url,
                             })
                         }}>
                             <Text style={styles.buttonText}>More Details</Text>
@@ -56,6 +57,7 @@ const ImageTab = ({ navigation }) => {
                     </View>
                 </View>
             </TouchableOpacity>
+
         );
     }
 
@@ -83,10 +85,11 @@ const ImageTab = ({ navigation }) => {
 
         PushNotification.localNotificationSchedule({
             channelId: "test-channel",
-            title: "Alarm",
+            title: "Alarm - Schedule Notification",
             message: "You clicked on id:" + item.id + " 10 seconds ago",
             date: new Date(Date.now() + 10 * 1000),
             allowWhileIdle: true,
+            priority: "high",
         });
     }
 
@@ -101,7 +104,10 @@ const ImageTab = ({ navigation }) => {
                         renderItem={renderImage}
                         keyExtractor={(item, index) => item.id}
                         showsVerticalScrollIndicator={false}
+                        onRefresh={refetch}
+                        refreshing={isRefetching}
                     />
+
                 )
             }
         </View>

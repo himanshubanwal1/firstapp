@@ -52,6 +52,7 @@ const Root=()=>{
 
   const theme = isDarkTheme ? CustomDarkTheme : CustomDefaultTheme;
 
+
     return(
       <QueryClientProvider client={queryClient}>
       <PaperProvider theme={theme}>
