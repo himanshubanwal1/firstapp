@@ -57,20 +57,14 @@ const Root=()=>{
       <PaperProvider theme={theme}>
         <themecontext.Provider value={{isDarkTheme, setisDarkTheme}}>
         <NavigationContainer theme={theme}>
-            <Stack.Navigator initialRouteName={routes.root.onboarding.Name}>
+            <Stack.Navigator initialRouteName={routes.root.onboarding.Name} screenOptions={{ headerShown: false }}>
                 <Stack.Screen name={routes.root.onboarding.Name} component={Onboarding}/>
                 <Stack.Screen name={routes.root.dashboard.Name} component={Dashboard}/>
             </Stack.Navigator>
         </NavigationContainer>
         </themecontext.Provider>
       </PaperProvider>
-      </QueryClientProvider>
-      
-      
-        
-
+      </QueryClientProvider>    
     )
-}
-export default Root;
-
-
+  }
+  export default Root;

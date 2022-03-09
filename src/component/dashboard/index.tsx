@@ -1,15 +1,15 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React, { useContext } from "react";
-import { Text, View } from 'react-native';
 import routes from "../../asset/transilation/routes";
-import Image from "./image";
-import Post from "./post";
-import Settings from "./setting";
-import User from "./user";
+import ImageTab from "./image";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useTranslation } from 'react-i18next';
-const Tab = createBottomTabNavigator();
 import "../../asset/constant/IMLocalize"
+import PostTab from "./post";
+import SettingsTab from "./setting";
+import UserTab from "./user";
+
+const Tab = createBottomTabNavigator();
 
 const Dashboard=()=>{
   const { t } = useTranslation();
@@ -40,30 +40,29 @@ const Dashboard=()=>{
         
             <Tab.Screen 
             name={routes.root.dashboard.tabs.image.Name} 
-            component={Image}
+            component={ImageTab}
             options={{ tabBarLabel: t("common:imageTab") }}
             />
             <Tab.Screen 
             name={routes.root.dashboard.tabs.post.Name} 
-            component={Post}
+            component={PostTab}
             options={{ tabBarLabel: t("common:post") }}
             />
             <Tab.Screen 
             name={routes.root.dashboard.tabs.settings.Name} 
-            component={Settings}
+            component={SettingsTab}
             options={{ tabBarLabel: t("common:settings") }} 
             />
             <Tab.Screen 
             name={routes.root.dashboard.tabs.user.Name} 
-            component={User} 
+            component={UserTab} 
             options={{ tabBarLabel: t("common:user") }}
             />
         
         </Tab.Navigator>
     )
-    
-    
+
+
 }
 export default Dashboard;
-
 

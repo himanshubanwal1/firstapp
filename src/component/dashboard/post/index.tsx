@@ -24,21 +24,17 @@ const PostTab = ({ navigation }) => {
         console.log(item)
         return (
             <View style={styles.item}>
-                <Image
-                    style={styles.image}
-                    source={{ uri: item.url }}
-                    resizeMode='contain'
-                />
+              
                 <View style={styles.wrapText}>
                     <Text style={styles.fontSize}>{`${item.id}. ${item.title} `}</Text>
                 </View>
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity style={styles.buttonStyle} onPress={() => {
                         navigation.navigate(routes.root.onboarding.postDetail.Name, {
-                            body:item.string,
-                            id:item.number,
-                            title:item.string,
-                            userId:item.number,
+                            body:item.body,
+                            id:item.id,
+                            title:item.title,
+                            userId:item.userId,
                         })
                     }}>
                         <Text style={styles.buttonText}>More Details</Text>
@@ -84,7 +80,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 30,
+        marginBottom: 80,
         borderRadius: 10,
         backgroundColor: 'rgba(255,255,255,0.90)',
         padding: 50,

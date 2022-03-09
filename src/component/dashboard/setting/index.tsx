@@ -4,7 +4,7 @@ import { themecontext } from "../../../root";
 import { useTranslation } from 'react-i18next';
 import { useTheme  } from '@react-navigation/native';
 
-const Settings=()=>{
+const SettingsTab=()=>{
     const{isDarkTheme,setisDarkTheme}=useContext(themecontext)
     const onPress=()=>{
         setisDarkTheme( !isDarkTheme );
@@ -71,4 +71,4 @@ const Style=StyleSheet.create({
     }
 })
 
-export default Settings;
+export default SettingsTab;

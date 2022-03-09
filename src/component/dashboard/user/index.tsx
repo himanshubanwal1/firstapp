@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from 'react-native';
 import { useTheme } from '@react-navigation/native';
-const User=()=>{
+const UserTab=()=>{
     const { colors } = useTheme();
     return(
         <View>
@@ -13,4 +13,4 @@ const User=()=>{
     
     
 }
-export default User;
+export default UserTab;
