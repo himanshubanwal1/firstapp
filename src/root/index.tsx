@@ -24,9 +24,11 @@ export const themecontext=createContext({
 })
 const queryClient = new QueryClient();
 const Stack = createNativeStackNavigator();
+
 const Root=()=>{
   
   const[isDarkTheme,setisDarkTheme]=useState(false)
+
 
   const CustomDefaultTheme = {
     ...NavigationDefaultTheme,
