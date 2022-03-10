@@ -13,6 +13,10 @@ const routes = {
             postDetail:{
                 Name:'PostDetail'
             },
+           startScreen:{
+                Name:'StartScreen'
+            },
+
         },
         dashboard: {
             Name: 'Dashboard',

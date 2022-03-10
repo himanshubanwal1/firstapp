@@ -1,3 +1,4 @@
+
 import React, { useMemo, useState } from "react";
 import { Text, View } from 'react-native';
 import { useTheme } from '@react-navigation/native';
@@ -180,4 +181,5 @@ const styles = StyleSheet.create({
 
 
 export default ImageTab;
+
 

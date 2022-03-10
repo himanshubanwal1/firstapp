@@ -1,3 +1,8 @@
+
+import React from 'react';
+import { View ,Text} from 'react-native';
+
+
 import React, { useContext } from "react";
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { themecontext } from "../../../root";
@@ -72,3 +77,4 @@ const Style=StyleSheet.create({
 })
 
 export default SettingsTab;
+

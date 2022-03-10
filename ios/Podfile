@@ -12,13 +12,18 @@ target 'Fisrtapp' do
     :hermes_enabled => false
   )
 
+
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
-<<<<<<< HEAD
-=======
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+
+
   pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
 
->>>>>>> b67657092d1700912d836a6049ef86d0dbddf7d2
+
   target 'FisrtappTests' do
     inherit! :complete
     # Pods for testing
