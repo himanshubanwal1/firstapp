@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from "react";
 import { Text, View } from 'react-native';
 import { useTheme } from '@react-navigation/native';
-import { BASE_URL, IMAGES } from '../../../services/endpoints';
+import { BASE_URL, IMAGES } from "../../../service/endpoint";
 import { Pressable } from "react-native";
 import { useQuery } from "react-query";
-import Images from '../../../services/models/image';
+import Images from '../../../service/modules/image';
 import { ScrollView } from "react-native";
 import { ActivityIndicator } from "react-native";
 import { StyleSheet, FlatList, Image } from "react-native";
@@ -24,7 +24,7 @@ const ImageTab = ({ navigation }) => {
                 console.log('got response from image api.')
             }
         }
-
+    )
     const renderImage = ({ item, index }) => {
         // console.log(item)
         // console.log(index)
