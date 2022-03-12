@@ -137,6 +137,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     splits {
         abi {
@@ -150,7 +151,7 @@ android {
         debug {
             storeFile file('my-upload-key.keystore')
             storePassword 'googlesignin'
-            keyAlias 'my-key-alias'
+            keyAlias 'my-key-alias' 
             keyPassword 'googlesignin'
         }
     }

@@ -10,7 +10,7 @@ import { useNavigation } from "@react-navigation/native";
 import LinearGradient from "react-native-linear-gradient";
 
 
-const User=()=>{
+const UserTab=()=>{
    const [userEmail,setuserEmail] = useState('');
    const [userName,setuserName] = useState('');
    const [userId,setuserId] = useState('');
