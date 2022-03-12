@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "266561141597",
+    "firebase_url": "https://rn--signin-3f6f0-default-rtdb.firebaseio.com",
     "project_id": "rn--signin-3f6f0",
     "storage_bucket": "rn--signin-3f6f0.appspot.com"
   },
@@ -13,6 +14,22 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "266561141597-guugqaqah4a5ketvglioeeperma8b16q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fisrtapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "266561141597-hm5rcbggkmic5v3dgo80m26osl0tsikl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fisrtapp",
+            "certificate_hash": "75a0c5baacea65c54c376a1a43783c008cb5b968"
+          }
+        },
         {
           "client_id": "266561141597-289afanpufq8v3fm6na3mnb2qmaflsml.apps.googleusercontent.com",
           "client_type": 3

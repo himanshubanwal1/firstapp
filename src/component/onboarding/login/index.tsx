@@ -5,10 +5,9 @@ import messaging from '@react-native-firebase/messaging';
 import { View, Text, Image, StyleSheet, Pressable, TouchableOpacity, StatusBar, TextInput, Button, Alert } from "react-native";
 import routes from "../../../asset/transilation/routes";
 import LinearGradient from 'react-native-linear-gradient';
-import FontAwesome, { SolidIcons } from 'react-native-vector-icons/FontAwesome';
+import FontAwesome, {SolidIcons} from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import auth, { firebase } from '@react-native-firebase/auth';
-
 
 import {
     GoogleSignin,
@@ -21,17 +20,17 @@ const Login = () => {
     useEffect(() => {
         const unsubscribe = auth().onAuthStateChanged((user) => { // detaching the listener
             if (user) {
-                // ...your code to handle authenticated users. 
+                // ...your code to handle authenticated users.
                 navigation.navigate(routes.root.dashboard.Name);
             } else {
-                // No user is signed in...code to handle unauthenticated users. 
+                // No user is signed in...code to handle unauthenticated users.
 
             }
         });
-        return () => unsubscribe(); // unsubscribing from the listener when the component is unmounting. 
+        return () => unsubscribe(); // unsubscribing from the listener when the component is unmounting.
     }, []);
 
-    const navigation = useNavigation();
+  const navigation = useNavigation();
     GoogleSignin.configure({
         webClientId: '266561141597-289afanpufq8v3fm6na3mnb2qmaflsml.apps.googleusercontent.com',
     });
@@ -144,7 +143,7 @@ const Login = () => {
                     />
                     <Image source={require('../../../asset/images/authlogo.png')} style={{ width: 200, height: 200, marginTop: 5 }} />
                 </View>
-            </View>   
+            </View>
         </View>
     );
 }
@@ -152,7 +151,7 @@ const Login = () => {
 const Style=StyleSheet.create({
             container:{
                 flex:1,
-                backgroundColor: '#6C63FF', 
+                backgroundColor: '#6C63FF',
              },
 
             header:{
@@ -190,7 +189,7 @@ const Style=StyleSheet.create({
                 flex:1,
             paddingLeft: 10,
             color: '#34d5eb',
-        
+
     },
             action:{
                 flexDirection: "row",
