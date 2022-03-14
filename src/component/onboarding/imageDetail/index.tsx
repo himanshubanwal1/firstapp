@@ -16,7 +16,7 @@ const ImageDetail = ({ route, navigation }) => {
             </View>
 
             <View style={styles.itemContainer}>
-                <Image source={{ uri: img_Url }} style={{ height: 100, width: 100, borderRadius:100 }} />
+                <Image source={{ uri: img_Url }} style={{ height: 100, width: 100, borderRadius: 100 }} />
                 <Text style={styles.textStyle}> Id: {_id}</Text>
                 <Text style={styles.textStyle}> Title: {title}</Text>
                 <Text style={styles.textStyle}> Thumbnail Url: {thumbnail_Url}</Text>
@@ -44,9 +44,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderBottomWidth: 1,
         borderBottomLeftRadius: 10,
+        marginTop: 60
     },
     headerText: {
-        color: 'black',
+        color: 'grey',
         fontSize: 30,
         textAlign: 'center'
     },

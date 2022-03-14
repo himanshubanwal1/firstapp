@@ -1,5 +1,5 @@
 
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { Text, View } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import { BASE_URL, IMAGES } from "../../../service/endpoint";
