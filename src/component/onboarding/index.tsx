@@ -12,8 +12,8 @@ const Stack = createNativeStackNavigator();
 const Onboarding = () => {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name={routes.root.onboarding.login.Name} component={Login} />
             <Stack.Screen name={routes.root.onboarding.startScreen.Name}   component={StartScreen}/>
+            <Stack.Screen name={routes.root.onboarding.login.Name} component={Login} />
             <Stack.Screen name={routes.root.onboarding.imageDetail.Name} component={ImageDetail} />
             <Stack.Screen name={routes.root.onboarding.postDetail.Name} component={PostDetail}/>
 
